@@ -1,0 +1,7 @@
+{
+  "require": {
+    "grpc/grpc": "v0.15.2",
+    "google/auth": "v0.9"
+  },
+  "minimum-stability": "dev"
+}
