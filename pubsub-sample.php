@@ -12,8 +12,13 @@ class PubsubSample {
   function updateAuthMetadataCallback($context)
   {
     $auth_credentials = ApplicationDefaultCredentials::getCredentials();
-    return $auth_credentials->updateMetadata($metadata = [],
-                                             $context->service_url);
+    $result = $auth_credentials->updateMetadata($metadata = [],
+                                              $context->service_url);
+    $metadata = [];
+    foreach ($result as $key => $value) {
+      $metadata[strtolower($key)] = $value;
+    }
+    return $metadata;
   }
 
   function main() {
