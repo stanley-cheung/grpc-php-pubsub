@@ -13,7 +13,7 @@ class PubsubSample {
   {
     $auth_credentials = ApplicationDefaultCredentials::getCredentials();
     $result = $auth_credentials->updateMetadata($metadata = [],
-                                              $context->service_url);
+                                                $context->service_url);
     $metadata = [];
     foreach ($result as $key => $value) {
       $metadata[strtolower($key)] = $value;
